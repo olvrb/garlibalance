@@ -1,0 +1,55 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 425%;
+}
+
+h2 {
+    font-size: 300%;
+}
+
+p {
+    font-size: 100%;
+}
+
+.centered-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.centered-wrapper:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.centered-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+a {
+    color: #7289da;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #36393e;
+    color: #acbdbd;
+    text-align: center;
+}
+svg {
+    fill: #acbdbd;
+}

@@ -12,23 +12,30 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 </head>
 
-<body class="centered-wrapper">
+<body class="centered-wrapper" style="font-family: 'Comfortaa' !important;">
   <div class="centered-content">
-    <img class="logo" src="https://garlicoin.io/static/logo.040b5384.png" id="logo">
+    <img class="logo" src="/images/logo.png" id="logo">
     <form id="form">
       <div class="mdc-text-field">
-        <input required id="address" type="text" id="my-text-field" class="mdc-text-field__input" size="40">
+        <input
+        autocorrect="off" autocapitalize="off" spellcheck="false"
+        style="color: #acbdbd" required id="address" type="text" id="my-text-field" class="mdc-text-field__input" size="40">
         <label class="mdc-floating-label" for="my-text-field">Garlicoin Address</label>
         <div class="mdc-line-ripple"></div>
-      </div><br>
+      </div>
+      <br>
       <button id="submitForm" class="mdc-button mdc-button--raised" type="submit">Get Balance</button>
     </form>
     <br>
-    <h3 id="balance" class="mdc-typography--headline3" style="top: 50%; position: relative; margin: 0 auto; text-align: center"></h3>
+    <h3 id="balance" class="mdc-typography--headline3" style="font-family: 'Comfortaa' !important; top: 50%; position: relative; margin: 0 auto; text-align: center"></h3>
     <br>
-    <button onclick="forgetCookies()" id="forget" class="mdc-button mdc-button--raised" type="submit">forget address?</button>
 
   </div>
+  <footer>
+    <button onclick="forgetCookies()" id="forget" class="mdc-button mdc-button--raised">forget address?</button>
+    <button id="about" onclick="location.href='/about'" class="mdc-button mdc-button--raised">about</button>
+    <p>made with ❤ in stockholm</p>
+  </footer>
   <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>

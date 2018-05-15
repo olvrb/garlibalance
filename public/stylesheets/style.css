@@ -1,42 +1,112 @@
-html,
-body {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
+@media (min-width: 320px) and (max-width: 500px) {
+    .centered-wrapper:before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        width: 0;
+        height: 25% !important;
+        /* 25% for mobile, 100% for desktop */
+        vertical-align: middle;
+    }
+}
+@media (min-width: 320px) and (max-width: 1000px) and (orientation: landscape) {
+    img {
+        height: 10% !important;
+        width: 10% !important;
+    }
+    .centered-wrapper:before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        width: 0;
+        height: 0% !important;
+        /* 25% for mobile, 100% for desktop */
+        vertical-align: middle;
+    }
 }
 
+img {
+    height: 20%;
+    width: 20%;
+}
+html,
+body {
+    background-color: #36393e;
+    color: #acbdbd;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+label {
+    color: #acbdbd;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #36393e;
+    color: #acbdbd;
+    text-align: center;
+}
+button {
+    position: relative;
+    display: inline-block;
+}
+:root {
+    --mdc-theme-primary: #36393e;
+    --mdc-theme-secondary: #acbdbd;
+    --mdc-theme-background: #36393e;
+}
+
+.mdc-floating-label {
+    color: #acbdbd !important;
+    /* Overwrite mdc's label for a very nice dark mode */
+}
 .centered-wrapper {
-  position: relative;
-  text-align: center;
+    position: relative;
+    text-align: center;
 }
 
 .centered-wrapper:before {
-  content: "";
-  position: relative;
-  display: inline-block;
-  width: 0;
-  height: 100%;
-  vertical-align: middle;
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    /* 25% for mobile, 100% for desktop */
+    vertical-align: middle;
 }
 
 .centered-content {
-  display: inline-block;
-  vertical-align: middle;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  top: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 100%;
 }
 
-.rotate-right{ 
-  transform-origin:50% 50%;
-  animation:1s rotateRight infinite linear; 
+.rotate-right {
+    transform-origin: 50% 50%;
+    animation: 1s rotateRight infinite linear;
 }
 
-@keyframes rotateRight{
-  100%{ transform:rotate(360deg); }
+@keyframes rotateRight {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Change the white to any color ;) */
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #36393e inset;
+    box-shadow: 0 0 0 30px #36393e inset;
 }
