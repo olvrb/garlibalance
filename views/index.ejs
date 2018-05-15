@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>garlibalance</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel='stylesheet prefetch' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+</head>
+
+<body class="centered-wrapper">
+  <div class="centered-content">
+    <img class="logo" src="https://garlicoin.io/static/logo.040b5384.png" id="logo">
+    <form id="form">
+      <div class="mdc-text-field">
+        <input required id="address" type="text" id="my-text-field" class="mdc-text-field__input" size="40">
+        <label class="mdc-floating-label" for="my-text-field">Garlicoin Address</label>
+        <div class="mdc-line-ripple"></div>
+      </div><br>
+      <button id="submitForm" class="mdc-button mdc-button--raised" type="submit">Get Balance</button>
+    </form>
+    <br>
+    <h3 id="balance" class="mdc-typography--headline3" style="top: 50%; position: relative; margin: 0 auto; text-align: center"></h3>
+    <br>
+    <button onclick="forgetCookies()" id="forget" class="mdc-button mdc-button--raised" type="submit">forget address?</button>
+
+  </div>
+  <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="https://unpkg.com/snekfetch"></script>
+  <script src="/javascripts/index.js"></script>
+</body>
+
+</html>
