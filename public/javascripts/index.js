@@ -28,7 +28,7 @@ $("#form").submit(event => {
         expires: DayDiff(new Date()) //expire in 2020, cookiepocalypse
         //reference: https://stackoverflow.com/questions/532635/
     });
-    $.post(`/getbalance?address=${address}`, resp => { // to avoid cors errors we're getting the balance server-side
+    $.post(`${baseUrl}getbalance?address=${address}`, resp => { // to avoid cors errors we're getting the balance server-side
         console.log(resp);
 
         resp = JSON.parse(resp);
