@@ -21,6 +21,7 @@ const floatingLabel = new mdc.floatingLabel.MDCFloatingLabel(document.querySelec
 })();
 
 $("#form").submit(event => {
+    $("#inputError").hide(); //hide error
     $("#logo").attr("class", "logo rotate-right") //start spinning animtaion
     let getUrl = window.location;
     let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
@@ -29,9 +30,11 @@ $("#form").submit(event => {
         expires: DayDiff(new Date()) //expire in 2020, cookiepocalypse, reference: https://stackoverflow.com/questions/532635/javascript-cookie-with-no-expiration-date?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
     });
     $.post(`${baseUrl}getbalance?address=${address}`, resp => { // to avoid cors we're getting the balance server-side
-        resp = JSON.parse(resp);
         if (resp.error) {
             $("#balance").html(resp.error); //show error, most probably unknown address
+        } else if (resp.inputError) {
+            $("#inputError").show(); //show error 
+            $("#inputError").html(resp.inputError); //show error 
         } else {
             $("#submitForm").html("Update");
             $("#balance").html(`${resp} GRLC`);
