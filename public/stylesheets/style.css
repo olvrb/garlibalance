@@ -24,7 +24,6 @@
         vertical-align: middle;
     }
 }
-
 img {
     height: 20%;
     width: 20%;
@@ -56,8 +55,11 @@ button {
     position: relative;
     display: inline-block;
 }
+a {
+    color: #7289da;
+}
 :root {
-    --mdc-theme-primary: #36393e;
+    --mdc-theme-primary: #7289da;
     --mdc-theme-secondary: #acbdbd;
     --mdc-theme-background: #36393e;
 }
@@ -96,6 +98,10 @@ button {
 .rotate-right {
     transform-origin: 50% 50%;
     animation: 1s rotateRight infinite linear;
+}
+
+.transparent-label {
+    pointer-events: none
 }
 
 @keyframes rotateRight {

@@ -10,31 +10,31 @@
   <link rel='stylesheet prefetch' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 </head>
 
 <body style="vertical-align: top; text-align: center; font-family: 'Comfortaa' !important;">
-  <h1 class="">FAQ</h1>
+  <h1 class="faq">FAQ</h1>
   <div id="qa">
     <h2>What is this?</h2>
-    <p>A simple balance checker.</p>
+    <p>A simple balance checker for <a href="https://garlicoin.io">Garlicoin.</a></p>
     <h2>Can i contribute?</h2>
     <p>Sure! Submit a pull request <a href="https://github.com/olvrb/garlibalance">here.</a></p>
-    <h2></h2>
+    <h2>I want to contact you! How?!</h2>
+    <p>I'm usually available on <a href="https://discordapp.com">Discord</a> as oliver#9880. Otherwise see <a target="_blank" href="https://reoo.me">https://reoo.me</a>  for more ways to contact me.</p>
   </div>
   <footer>
-    <button onclick="location.href='/'" class="mdc-button mdc-button--raised">
+    <button id="goBack" onclick="location.href='/'" class="mdc-button mdc-button--raised">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M0 0h24v24H0z" fill="none"/>
         <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
     </svg>      
     go back
     </button>
-    <p>made in stockholm</p>
+    <p>made with <a id="heart">❤</a> in stockholm by oliver</p>
   </footer>
-  <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-  <script src="https://unpkg.com/snekfetch"></script>
   <script src="/javascripts/about.js"></script>
 </body>
 

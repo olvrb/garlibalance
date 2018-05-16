@@ -1,1 +1,3 @@
-const buttonRipple = new mdc.ripple.MDCRipple(document.querySelector('.mdc-button'));
+const buttonRipple = new mdc.ripple.MDCRipple(document.querySelector('#goBack'));
+
+console.log(buttonRipple);

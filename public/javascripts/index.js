@@ -3,6 +3,7 @@ const textField = new mdc.textField.MDCTextField(document.querySelector('.mdc-te
 const forgetButtonRipple = new mdc.ripple.MDCRipple(document.querySelector('#forget'));
 const aboutButtonRipple = new mdc.ripple.MDCRipple(document.querySelector('#about')); 
 const submitButtonRipple = new mdc.ripple.MDCRipple(document.querySelector('#submitForm'));
+const floatingLabel = new mdc.floatingLabel.MDCFloatingLabel(document.querySelector('#floatLabel'));
 /* EVENTS */
 
 (() => {
@@ -32,6 +33,7 @@ $("#form").submit(event => {
         if (resp.error) {
             $("#balance").html(resp.error); //show error, most probably unknown address
         } else {
+            $("#submitForm").html("Update");
             $("#balance").html(`${resp} GRLC`);
         }
         $("#logo").attr("class", "logo"); // stop spinning logo

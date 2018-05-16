@@ -10,6 +10,10 @@
   <link rel='stylesheet prefetch' href='https://unpkg.com/material-components-web@latest/dist/material-components-web.css'>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 </head>
 
 <body class="centered-wrapper" style="font-family: 'Comfortaa' !important;">
@@ -20,7 +24,9 @@
         <input
         autocorrect="off" autocapitalize="off" spellcheck="false"
         style="color: #acbdbd" required id="address" type="text" id="my-text-field" class="mdc-text-field__input" size="40">
-        <label class="mdc-floating-label" for="my-text-field">Garlicoin Address</label>
+        <label id="floatLabel" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" 
+        unselectable="on"
+        onselectstart="return false;" class="mdc-floating-label transparent-label" for="my-text-field">Garlicoin Address</label>
         <div class="mdc-line-ripple"></div>
       </div>
       <br>
@@ -34,12 +40,8 @@
   <footer>
     <button onclick="forgetCookies()" id="forget" class="mdc-button mdc-button--raised">forget address?</button>
     <button id="about" onclick="location.href='/about'" class="mdc-button mdc-button--raised">about</button>
-    <p>made with ❤ in stockholm</p>
+    <p>made with <a id="heart">❤</a> in stockholm by oliver</p>
   </footer>
-  <script src='https://unpkg.com/material-components-web@latest/dist/material-components-web.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-  <script src="https://unpkg.com/snekfetch"></script>
   <script src="/javascripts/index.js"></script>
 </body>
 
