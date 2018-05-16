@@ -29,8 +29,9 @@ $("#form").submit(event => {
         //reference: https://stackoverflow.com/questions/532635/
     });
     $.post(`/getbalance?address=${address}`, resp => { // to avoid cors errors we're getting the balance server-side
-        resp = JSON.parse(resp);
         console.log(resp);
+
+        resp = JSON.parse(resp);
         if (resp.error) {
             $("#balance").html(resp.error); //show error, most probably unknown address
         } else if (resp.inputError) {
