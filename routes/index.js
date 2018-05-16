@@ -2,6 +2,7 @@ let express = require('express');
 let router = express.Router();
 let request = require("request");
 router.post('/getbalance', async (req, res, next) => {
+  res.set('Content-Type', 'application/json');
   if (!req.query.address) {
     return res.json(JSON.stringify({ inputError: "This field is required!" }));
   } 
@@ -10,7 +11,7 @@ router.post('/getbalance', async (req, res, next) => {
   });
 });
 router.get("/about", (req, res, next) => {
-  res.render("about");                      // TODO: write about page
+  res.render("about");
 });
 /* GET home page. */
 router.get('/', (req, res, next) => {

@@ -51,6 +51,25 @@ function forgetCookies() {
     location.reload();   //reload page to clear all fields
 }
 
+$(document).ready(() => {
+    if (Cookies.get("hasAccepted") == "true") {
+        $("#cookie-consent").hide();
+        $("#cookie-info").hide();
+        return;
+    }    
+    $("#cookie-consent").show();
+    $("#cookie-info").show();   
+});
+$("#cookie-consent").click(e => {
+    Cookies.set("hasAccepted", "true");
+    if (Cookies.get("hasAccepted") == "true") {
+        console.log("hide");
+        $("#cookie-consent").hide();
+        $("#cookie-info").hide();
+    }
+    e.preventDefault();
+});
+
 /* FUNCTIONS */
 
 function DayDiff(CurrentDate) {
