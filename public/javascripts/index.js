@@ -7,8 +7,6 @@ const floatingLabel = new mdc.floatingLabel.MDCFloatingLabel(document.querySelec
 /* EVENTS */
 
 (() => {
-    let getUrl = window.location;
-    let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
     let addressInput = document.getElementById("address");
     let address = Cookies.get("address");
     addressInput.focus();
@@ -27,9 +25,11 @@ $("#form").submit(event => {
     let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
     let address = document.getElementById("address").value; //get grlc address
     Cookies.set("address", address, {
-        expires: DayDiff(new Date()) //expire in 2020, cookiepocalypse, reference: https://stackoverflow.com/questions/532635/javascript-cookie-with-no-expiration-date?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+        expires: DayDiff(new Date()) //expire in 2020, cookiepocalypse
+        //reference: https://stackoverflow.com/questions/532635/
     });
-    $.post(`${baseUrl}getbalance?address=${address}`, resp => { // to avoid cors we're getting the balance server-side
+    $.post(`/getbalance?address=${address}`, resp => { // to avoid cors errors we're getting the balance server-side
+        resp = JSON.parse(resp);
         if (resp.error) {
             $("#balance").html(resp.error); //show error, most probably unknown address
         } else if (resp.inputError) {
