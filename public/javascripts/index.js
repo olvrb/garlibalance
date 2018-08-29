@@ -1,7 +1,7 @@
 /* MDC */
 const textField = new mdc.textField.MDCTextField(document.querySelector('.mdc-text-field'));
 const forgetButtonRipple = new mdc.ripple.MDCRipple(document.querySelector('#forget'));
-const aboutButtonRipple = new mdc.ripple.MDCRipple(document.querySelector('#about')); 
+const aboutButtonRipple = new mdc.ripple.MDCRipple(document.querySelector('#about'));
 const submitButtonRipple = new mdc.ripple.MDCRipple(document.querySelector('#submitForm'));
 const floatingLabel = new mdc.floatingLabel.MDCFloatingLabel(document.querySelector('#floatLabel'));
 /* EVENTS */
@@ -12,9 +12,6 @@ const floatingLabel = new mdc.floatingLabel.MDCFloatingLabel(document.querySelec
     addressInput.focus();
     if (address) { //load cookies and automatically get address
         addressInput.value = address;
-        /*document.querySelector("#submitForm").click(e => {
-            e.preventDefault();                            // TODO: fix reload bug
-        });*/
     }
 })();
 
@@ -48,7 +45,7 @@ $("#form").submit(event => {
 
 function forgetCookies() {
     Cookies.remove("address"); //simply remove the cookie if client wants to
-    location.reload();   //reload page to clear all fields
+    location.reload(); //reload page to clear all fields
 }
 
 $(document).ready(() => {
@@ -56,9 +53,9 @@ $(document).ready(() => {
         $("#cookie-consent").hide();
         $("#cookie-info").hide();
         return;
-    }    
+    }
     $("#cookie-consent").show();
-    $("#cookie-info").show();   
+    $("#cookie-info").show();
 });
 $("#cookie-consent").click(e => {
     Cookies.set("hasAccepted", "true");
